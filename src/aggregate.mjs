@@ -2,6 +2,8 @@ import {MongoRealmCursor} from "./cursor.mjs";
 
 export class MongoRealmAggregateCursor extends MongoRealmCursor {
 
+    #cursor;
+
     constructor(collection, pipeline) {
         super();
         this.options = Object.assign(
@@ -11,9 +13,8 @@ export class MongoRealmAggregateCursor extends MongoRealmCursor {
     }
 
     init() {
-        const {collection, pipeline} = this.options;
-        return this.options.cursor ??= collection.init()
-            .then(collection => collection.aggregate(pipeline));
+        return this.#cursor ??= this.options.collection.init()
+            .then(collection => collection.aggregate(this.options.pipeline));
     }
 
 }

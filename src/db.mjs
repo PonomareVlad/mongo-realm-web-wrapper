@@ -2,6 +2,8 @@ import {MongoRealmCollection} from "./collection.mjs";
 
 export class MongoRealmDb {
 
+    #db;
+
     constructor(client, databaseName) {
         this.options = Object.assign(
             Object.create(client.options),
@@ -10,9 +12,8 @@ export class MongoRealmDb {
     }
 
     init() {
-        const {client, databaseName} = this.options;
-        return this.options.db ??= client.init()
-            .then(mongo => mongo.db(databaseName));
+        return this.#db ??= this.options.client.init()
+            .then(mongo => mongo.db(this.options.databaseName));
     }
 
     collection(name) {

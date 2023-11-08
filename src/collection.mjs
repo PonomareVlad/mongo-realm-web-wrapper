@@ -3,6 +3,8 @@ import {MongoRealmAggregateCursor} from "./aggregate.mjs";
 
 export class MongoRealmCollection {
 
+    #collection;
+
     constructor(db, collectionName) {
         this.options = Object.assign(
             Object.create(db.options),
@@ -11,9 +13,8 @@ export class MongoRealmCollection {
     }
 
     init() {
-        const {db, collectionName} = this.options;
-        return this.options.collection ??= db.init()
-            .then(db => db.collection(collectionName));
+        return this.#collection ??= this.options.db.init()
+            .then(db => db.collection(this.options.collectionName));
     }
 
     async aggregate(pipeline) {

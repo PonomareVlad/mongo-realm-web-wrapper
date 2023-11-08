@@ -2,6 +2,8 @@ import {MongoRealmCursor} from "./cursor.mjs";
 
 export class MongoRealmFindCursor extends MongoRealmCursor {
 
+    #cursor;
+
     constructor(collection, filter, options) {
         super();
         this.options = Object.assign(
@@ -11,9 +13,10 @@ export class MongoRealmFindCursor extends MongoRealmCursor {
     }
 
     init() {
-        const {collection, filter, options} = this.options;
-        return this.options.cursor ??= collection.init()
-            .then(collection => collection.find(filter, options));
+        return this.#cursor ??= this.options.collection.init().then(collection => {
+            const {filter, options} = this.options;
+            return collection.find(filter, options);
+        });
     }
 
 }
