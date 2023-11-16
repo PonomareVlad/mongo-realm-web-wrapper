@@ -1,6 +1,8 @@
-import {MongoRealmCollection} from "./collection.mjs";
+import {
+    Collection
+} from "./collection.mjs";
 
-export class MongoRealmDb {
+export class Db {
 
     #db;
 
@@ -17,7 +19,7 @@ export class MongoRealmDb {
     }
 
     collection(name) {
-        return new MongoRealmCollection(this, name);
+        return new Collection(this, name);
     }
 
 }

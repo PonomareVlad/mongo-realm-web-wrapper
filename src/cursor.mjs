@@ -1,4 +1,4 @@
-export class MongoRealmCursor {
+export class AbstractCursor {
 
     #results;
     #index = 0;

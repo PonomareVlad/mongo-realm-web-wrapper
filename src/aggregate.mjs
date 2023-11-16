@@ -1,6 +1,8 @@
-import {MongoRealmCursor} from "./cursor.mjs";
+import {
+    AbstractCursor
+} from "./cursor.mjs";
 
-export class MongoRealmAggregateCursor extends MongoRealmCursor {
+export class AggregationCursor extends AbstractCursor {
 
     #cursor;
 

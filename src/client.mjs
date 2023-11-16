@@ -1,8 +1,15 @@
-import {App, Credentials} from "realm-web";
-import {appIdFromDataUrl} from "./utils.mjs";
-import {MongoRealmDb} from "./db.mjs";
+import {
+    Db
+} from "./db.mjs";
+import {
+    App,
+    Credentials
+} from "realm-web";
+import {
+    appIdFromDataUrl
+} from "./utils.mjs";
 
-export class MongoRealmClient {
+export class MongoClient {
 
     #mongo;
 
@@ -45,7 +52,7 @@ export class MongoRealmClient {
     }
 
     db(dbName) {
-        return new MongoRealmDb(this, dbName);
+        return new Db(this, dbName);
     }
 
 }

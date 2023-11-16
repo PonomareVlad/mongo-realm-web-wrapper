@@ -1,7 +1,11 @@
-import {MongoRealmFindCursor} from "./find.mjs";
-import {MongoRealmAggregateCursor} from "./aggregate.mjs";
+import {
+    FindCursor
+} from "./find.mjs";
+import {
+    AggregationCursor
+} from "./aggregate.mjs";
 
-export class MongoRealmCollection {
+export class Collection {
 
     #collection;
 
@@ -18,7 +22,7 @@ export class MongoRealmCollection {
     }
 
     async aggregate(pipeline) {
-        return new MongoRealmAggregateCursor(this, pipeline);
+        return new AggregationCursor(this, pipeline);
     }
 
     async count(filter, options) {
@@ -45,7 +49,7 @@ export class MongoRealmCollection {
     }
 
     async find(filter, options) {
-        return new MongoRealmFindCursor(this, filter, options);
+        return new FindCursor(this, filter, options);
     }
 
     async findOne(filter, options) {
