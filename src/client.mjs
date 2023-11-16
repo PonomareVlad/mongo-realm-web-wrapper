@@ -1,13 +1,6 @@
-import {
-    Db
-} from "./db.mjs";
-import {
-    App,
-    Credentials
-} from "realm-web";
-import {
-    appIdFromDataUrl
-} from "./utils.mjs";
+import {Db} from "./db.mjs";
+import {App, Credentials} from "realm-web";
+import {appIdFromDataUrl} from "./utils.mjs";
 
 export class MongoClient {
 

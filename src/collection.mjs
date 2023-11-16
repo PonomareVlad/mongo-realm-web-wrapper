@@ -1,9 +1,5 @@
-import {
-    FindCursor
-} from "./find.mjs";
-import {
-    AggregationCursor
-} from "./aggregate.mjs";
+import {FindCursor} from "./find.mjs";
+import {AggregationCursor} from "./aggregate.mjs";
 
 export class Collection {
 

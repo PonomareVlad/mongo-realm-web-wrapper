@@ -1,6 +1,4 @@
-import {
-    Collection
-} from "./collection.mjs";
+import {Collection} from "./collection.mjs";
 
 export class Db {
 

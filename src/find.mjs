@@ -1,6 +1,4 @@
-import {
-    AbstractCursor
-} from "./cursor.mjs";
+import {AbstractCursor} from "./cursor.mjs";
 
 export class FindCursor extends AbstractCursor {
 
