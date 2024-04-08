@@ -17,7 +17,7 @@ export class Collection {
             .then(db => db.collection(this.options.collectionName));
     }
 
-    async aggregate(pipeline) {
+    aggregate(pipeline) {
         return new AggregationCursor(this, pipeline);
     }
 
@@ -26,11 +26,11 @@ export class Collection {
         return collection.count(filter, options);
     }
 
-    async countDocuments(filter, options) {
+    countDocuments(filter, options) {
         return this.count(filter, options);
     }
 
-    async estimatedDocumentCount(options) {
+    estimatedDocumentCount(options) {
         return this.count(undefined, options);
     }
 
@@ -44,7 +44,7 @@ export class Collection {
         return collection.deleteOne(filter);
     }
 
-    async find(filter, options) {
+    find(filter, options) {
         return new FindCursor(this, filter, options);
     }
 

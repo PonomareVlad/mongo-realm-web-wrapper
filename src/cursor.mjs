@@ -21,7 +21,7 @@ export class AbstractCursor {
         return this.#results ??= await this.init();
     }
 
-    async toArray() {
+    toArray() {
         return this.#load();
     }
 
