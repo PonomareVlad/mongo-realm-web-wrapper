@@ -1,6 +1,6 @@
 # mongo-realm-web-wrapper
 
-```
+```js
 import { MongoClient } from "mongo-realm-web-wrapper";
 
 const client = new MongoClient({ id, key, serviceName });
