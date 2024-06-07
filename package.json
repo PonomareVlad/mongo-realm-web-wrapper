@@ -7,10 +7,10 @@
   "type": "module",
   "license": "MIT",
   "dependencies": {
-    "realm-web": "npm:@ponomarevlad/realm-web@2.0.0-edge.1"
+    "realm-web": "npm:@ponomarevlad/realm-web@2.0.1-edge"
   },
   "overrides": {
-    "bson": "npm:@ponomarevlad/bson@6.2.0-no-tla.2"
+    "bson": "npm:@ponomarevlad/bson@6.7.0-no-tla"
   },
   "devDependencies": {
     "mongodb": "^6.2.0"
