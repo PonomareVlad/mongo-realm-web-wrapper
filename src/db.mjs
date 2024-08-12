@@ -19,4 +19,8 @@ export class Db {
   collection(name) {
     return new Collection(this, name)
   }
+
+  command() {
+    return {}
+  }
 }
