@@ -20,7 +20,12 @@ export class Db {
     return new Collection(this, name)
   }
 
-  command() {
-    return {}
+  async command(command) {
+    switch (true) {
+      case command.hello:
+        return { ok: 1, setName: '', setVersion: '' }
+      default:
+        return { ok: 0 }
+    }
   }
 }
