@@ -53,6 +53,10 @@ export class MongoClient {
     return new ClientSession()
   }
 
+  getMaxListeners() {
+    return 1
+  }
+
   setMaxListeners() {
     return this
   }
