@@ -22,7 +22,7 @@ export class Db {
 
   async command(command) {
     switch (true) {
-      case command.hello:
+      case command.hello === 1:
         return { ok: 1, setName: '', setVersion: '' }
       default:
         return { ok: 0 }
