@@ -88,6 +88,10 @@ export class Collection {
     return collection.updateOne(filter, update, options)
   }
 
+  async replaceOne(filter, replacement, options) {
+    return this.updateOne(filter, { $set: replacement }, options)
+  }
+
   async watch(pipeline, options) {
     const collection = await this.init()
     return collection.watch(options)
