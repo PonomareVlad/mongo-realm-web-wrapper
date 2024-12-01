@@ -1,6 +1,7 @@
 import { Db } from './db.mjs'
-import { App, Credentials } from 'realm-web'
+import { ClientSession } from './session.mjs'
 import { appIdFromDataUrl } from './utils.mjs'
+import { App, Credentials } from 'realm-web'
 
 export class MongoClient {
   #mongo
@@ -39,5 +40,28 @@ export class MongoClient {
 
   db(dbName) {
     return new Db(this, dbName)
+  }
+
+  async withSession(executor) {
+    const session = this.startSession()
+    const result = await executor(session)
+    await session.endSession()
+    return result
+  }
+
+  startSession() {
+    return new ClientSession()
+  }
+
+  getMaxListeners() {
+    return 1
+  }
+
+  setMaxListeners() {
+    return this
+  }
+
+  on() {
+    return this
   }
 }

@@ -92,4 +92,8 @@ export class Collection {
     const collection = await this.init()
     return collection.watch(options)
   }
+
+  async createIndex() {
+    return ''
+  }
 }
