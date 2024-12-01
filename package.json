@@ -1,5 +1,5 @@
 {
-  "version": "0.0.3",
+  "version": "0.0.4",
   "name": "mongo-realm-web-wrapper",
   "author": "Vladislav Ponomarev <PonomareVlad@users.noreply.github.com> (https://PonomareVlad.ru)",
   "funding": "https://PonomareVlad.ru/donate",
@@ -7,13 +7,13 @@
   "type": "module",
   "license": "MIT",
   "dependencies": {
-    "realm-web": "npm:@ponomarevlad/realm-web@2.0.1-edge"
+    "realm-web": "2.0.1"
   },
   "overrides": {
-    "bson": "npm:@ponomarevlad/bson@6.7.0-no-tla"
+    "bson": "github:PonomareVlad/js-bson#no-tla"
   },
   "devDependencies": {
-    "mongodb": "^6.2.0",
-    "prettier": "^3.2.5"
+    "mongodb": "^6.11.0",
+    "prettier": "^3.4.1"
   }
 }
